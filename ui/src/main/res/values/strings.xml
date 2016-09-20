@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">地纬课程Demo</string>
+    <string name="relative">相对布局</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
