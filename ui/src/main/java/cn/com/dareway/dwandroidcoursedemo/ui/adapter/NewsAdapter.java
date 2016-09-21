@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
+import cn.com.dareway.dwandroidcoursedemo.R;
 import cn.com.dareway.dwandroidcoursedemo.model.News;
 
 /**
@@ -43,13 +45,28 @@ public class NewsAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+    public View getView(int i, View convertView, ViewGroup viewGroup) {
+        ViewHolder viewHolder;
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.item_news, viewGroup, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+        News news = newsList.get(i);
+        viewHolder.tvTitle.setText(news.getTitle());
+        viewHolder.tvDate.setText(news.getPubTime());
+        return convertView;
     }
 
-    static class ViewHolder {
+    private static class ViewHolder {
+        TextView tvTitle, tvDate;
 
-
+        private ViewHolder(View view) {
+            tvTitle = (TextView) view.findViewById(R.id.tv_title);
+            tvDate = (TextView) view.findViewById(R.id.tv_date);
+        }
     }
-
 }

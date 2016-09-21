@@ -1,6 +1,7 @@
 package cn.com.dareway.dwandroidcoursedemo.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -26,6 +28,7 @@ import java.util.List;
 
 import cn.com.dareway.dwandroidcoursedemo.R;
 import cn.com.dareway.dwandroidcoursedemo.model.News;
+import cn.com.dareway.dwandroidcoursedemo.ui.activity.NewsDetailActivity;
 import cn.com.dareway.dwandroidcoursedemo.ui.adapter.NewsAdapter;
 
 /**
@@ -80,6 +83,16 @@ public class SpaceFragment extends Fragment {
                 getNews();
             }
         }).start();
+
+        list_news.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                intent.putExtra("url", newsList.get(position).getSourceUrl());
+                intent.setClass(getActivity(), NewsDetailActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //在子线程里访问网路，获取数据
