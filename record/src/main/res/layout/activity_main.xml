@@ -4,8 +4,9 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     tools:context="cn.com.dareway.record.MainActivity">
 
-    <VideoView
+    <fragment
         android:id="@+id/vv"
+        android:name="cn.com.dareway.record.TestFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>
