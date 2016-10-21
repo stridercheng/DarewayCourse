@@ -1,14 +1,14 @@
 package cn.com.dareway.dwandroidcoursedemo.ui.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import cn.com.dareway.dwandroidcoursedemo.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +19,7 @@ import cn.com.dareway.dwandroidcoursedemo.R;
  */
 public class ContactFragment extends Fragment {
 
+    ImageView iv_bg;
     public ContactFragment() {
         // Required empty public constructor
     }
@@ -28,7 +29,6 @@ public class ContactFragment extends Fragment {
      * this fragment using the provided parameters.
      * @return A new instance of fragment ContactFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static ContactFragment newInstance() {
         ContactFragment fragment = new ContactFragment();
         return fragment;
@@ -38,6 +38,7 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+        return view;
     }
 }

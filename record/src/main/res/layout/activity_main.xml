@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
     android:layout_width="match_parent" android:layout_height="match_parent"
     tools:context="cn.com.dareway.record.MainActivity">
-    <ListView
-        android:id="@+id/listview"
+
+    <VideoView
+        android:id="@+id/vv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent" />
 </RelativeLayout>
