@@ -10,9 +10,10 @@ import android.widget.ImageView;
  * Created by Administrator on 2016/10/21.
  */
 
-public class BannerAdapter extends PagerAdapter {
+public class BannerAdapter extends PagerAdapter{
     int[] pics;
     Context context;
+
     public BannerAdapter(int[] pics, Context context) {
         this.pics = pics;
         this.context = context;
@@ -25,16 +26,16 @@ public class BannerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == (View) object;
+        return view == object;
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        ImageView iv = new ImageView(context);
-        iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        iv.setImageResource(pics[position]);
-        container.addView(iv);
-        return iv;
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(pics[position]);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        container.addView(imageView);
+        return imageView;
     }
 
     @Override

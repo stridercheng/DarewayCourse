@@ -1,1 +1,1 @@
-include ':ui', ':record', ':sample', ':banner'
+include ':ui', ':record', ':sample', ':banner', ':persisitence'

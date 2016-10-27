@@ -24,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
         pager = (ViewPager) findViewById(R.id.pager);
         bannerAdapter = new BannerAdapter(pics, this);
         pager.setAdapter(bannerAdapter);
-        changePagerSpeed();
+
         loopBanner();
+
+        changePagerSpeed();
     }
 
 
