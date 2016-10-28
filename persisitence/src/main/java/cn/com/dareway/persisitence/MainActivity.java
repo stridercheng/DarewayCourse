@@ -1,18 +1,15 @@
 package cn.com.dareway.persisitence;
 
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.OutputStreamWriter;
+
+import cn.com.dareway.persisitence.db.DBManager;
+import cn.com.dareway.persisitence.model.Book;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +35,24 @@ public class MainActivity extends AppCompatActivity {
 //        String name = sp1.getString("name", "");
 //
 //        Toast.makeText(this, "name--->" + name, Toast.LENGTH_SHORT).show();
+        Book book = new Book();
+        book.setId(1);
+        book.setAuthor("dareway");
+        book.setName("book1");
+        book.setPages(45);
+        book.setPrice(20.04);
+
+        Book book1 = new Book();
+        book1.setId(2);
+        book1.setAuthor("dareway");
+        book1.setName("book2");
+        book1.setPages(45);
+        book1.setPrice(20.04);
+
+        DBManager dbManager = new DBManager(this);
+//        dbManager.insertBook(book);
+//        dbManager.insertBookUseSql(book1);
+        dbManager.getBooks();
     }
 
     @Override
@@ -48,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
